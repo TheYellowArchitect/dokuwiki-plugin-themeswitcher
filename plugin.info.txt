@@ -1,0 +1,7 @@
+base   themeswitcher
+author TheYellowArchitect
+email  hello@theyellowarchitect.com
+date   2026-10-15
+name   Theme Switcher
+desc   Lets readers switch between themes you write in CSS. Only the shown theme's images are downloaded, and a reader's choice is applied before the page is drawn.
+url    https://www.dokuwiki.org/plugin:themeswitcher

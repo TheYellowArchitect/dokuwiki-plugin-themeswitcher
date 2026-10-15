@@ -1,0 +1,63 @@
+/**
+ * Theme Switcher: the switcher's own styles (the themes themselves live in your CSS,
+ * or in examples/examples.less)
+ */
+
+/* without JavaScript there is nothing to switch (!important: templates style their menu items with ids) */
+html.no-js li.themeswitcher,
+html.no-js a[href$="#themeswitcher"],
+html.no-js button.plugin_themeswitcher {
+    display: none !important;
+}
+
+/* ~~THEMESWITCHER~~ */
+button.plugin_themeswitcher {
+    cursor: pointer;
+}
+
+/* the list of themes in "menu" mode */
+.plugin_themeswitcher_menu {
+    position: absolute;
+    z-index: 1000;
+    min-width: 10em;
+    padding: 4px;
+    background: @ini_background;
+    color: @ini_text;
+    border: 1px solid @ini_border;
+    border-radius: 3px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    font-size: .875rem;
+
+    button {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 5px 10px 5px 1.6em;
+        border: 0;
+        border-radius: 2px;
+        box-shadow: none;
+        background: none;
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        white-space: nowrap;
+        cursor: pointer;
+        position: relative;
+    }
+
+    button:hover,
+    button:focus {
+        background: @ini_background_alt;
+        outline: none;
+    }
+
+    button[aria-checked="true"] {
+        font-weight: bold;
+    }
+
+    button[aria-checked="true"]::before {
+        content: "✓";
+        position: absolute;
+        left: .5em;
+    }
+}

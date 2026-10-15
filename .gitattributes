@@ -1,0 +1,6 @@
+# kept out of the download that the Extension Manager installs
+/screenshots export-ignore
+/_test export-ignore
+/.github export-ignore
+/.gitattributes export-ignore
+/dokuwiki.org-page.txt export-ignore

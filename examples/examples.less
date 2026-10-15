@@ -1,0 +1,396 @@
+/**
+ * Theme Switcher: example themes for the default "dokuwiki" template
+ *
+ * Each theme is a block of normal CSS (or LESS) under html[data-wiki-theme="id"].
+ * A background image only downloads while its theme is shown, because only then
+ * does its rule match. Copy a block into conf/userstyle.css to build your own.
+ *
+ * To use these, list them in the plugin's "themes" setting, e.g.
+ *   default|Default, night|Night, basalt|Basalt & Gold, limestone|Limestone
+ *
+ * The background images are in examples/images and may be reused freely with the plugin.
+ */
+
+/* Palatino on Windows and Mac; P052 (the free Palatino clone) first, because on Linux
+   the name "Palatino Linotype" can resolve to an italic face */
+@serif: P052, "Palatino Linotype", Palatino, "URW Palladio L", "Book Antiqua", Georgia, serif;
+
+/* ================================================================ Night: a dark mode, no images */
+html[data-wiki-theme="night"] {
+    color-scheme: dark;
+
+    &,
+    body {
+        background: #141619;
+        color: #d5d8dc;
+    }
+
+    #dokuwiki__header .logo a,
+    .dokuwiki h1,
+    .dokuwiki h2,
+    .dokuwiki h3,
+    .dokuwiki h4,
+    .dokuwiki h5 {
+        color: #eef0f2;
+    }
+    #dokuwiki__header a,
+    .dokuwiki a:link,
+    .dokuwiki a:visited {
+        color: #7ab4f5;
+    }
+    .dokuwiki a.wikilink1 {
+        color: #6fcf8b;
+    }
+    .dokuwiki a.wikilink2 {
+        color: #f08a7a;
+    }
+
+    .dokuwiki div.page,
+    #dw__toc,
+    .dokuwiki .pageId span {
+        background: #1d2024;
+        color: #d5d8dc;
+        border-color: #2c3036;
+    }
+    .dokuwiki div.page {
+        box-shadow: 0 0 .5em #000;
+    }
+    .dokuwiki .pageId span {
+        color: #8b929a;
+        box-shadow: none;
+    }
+    #dw__toc h3 {
+        background: #262a30;
+    }
+    .dokuwiki div.breadcrumbs,
+    .dokuwiki div.breadcrumbs div {
+        border-color: #2c3036;
+    }
+    .dokuwiki .docInfo,
+    #dokuwiki__footer,
+    #dokuwiki__footer a:link,
+    #dokuwiki__footer a:visited {
+        color: #8b929a;
+    }
+
+    pre,
+    code,
+    samp,
+    kbd {
+        background: #121417;
+        color: #d5d8dc;
+        border-color: #2c3036;
+        box-shadow: inset 0 0 .3em #000;
+    }
+    th {
+        background: #262a30;
+    }
+    th,
+    td {
+        border-color: #2c3036;
+    }
+    .dokuwiki table.inline tr:hover td {
+        background: #22262b;
+    }
+    .dokuwiki table.inline tr:hover th {
+        background: #2c3036;
+    }
+    .dokuwiki .page ul li,
+    .dokuwiki .aside ul li,
+    .dokuwiki .page ol li,
+    .dokuwiki .aside ol li {
+        color: #6b727a; /* bullets and numbers */
+    }
+    .dokuwiki .page li .li,
+    .dokuwiki .aside li .li {
+        color: #d5d8dc;
+    }
+    blockquote {
+        border-color: #3a3f46;
+    }
+    hr {
+        border-color: #2c3036;
+    }
+    mark {
+        background: #5c5220;
+        color: inherit;
+    }
+
+    input,
+    textarea,
+    select,
+    button,
+    input[type=submit],
+    input[type=button],
+    a.button {
+        background: #121417;
+        color: #d5d8dc;
+        border-color: #3a3f46;
+        box-shadow: none;
+    }
+    button,
+    input[type=submit],
+    input[type=button],
+    a.button {
+        background: #2a2e34;
+    }
+
+    #dokuwiki__pagetools div.tools ul li a svg,
+    #dokuwiki__usertools li.action a svg {
+        fill: #6b727a;
+    }
+    #dokuwiki__pagetools div.tools ul li a:hover svg,
+    #dokuwiki__pagetools div.tools ul li a:focus svg {
+        fill: #7ab4f5;
+    }
+    #dokuwiki__pagetools:hover div.tools ul,
+    #dokuwiki__pagetools:focus-within div.tools ul,
+    .dokuwiki form.search div.ajax_qsearch,
+    .JSpopup,
+    .plugin_themeswitcher_menu {
+        background: #1d2024;
+        color: #d5d8dc;
+        border-color: #3a3f46;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, .6);
+    }
+    .plugin_themeswitcher_menu button:hover,
+    .plugin_themeswitcher_menu button:focus {
+        background: #2a2e34;
+    }
+}
+
+/* ================================================================ Basalt & Gold: black stone, gold glyphs */
+html[data-wiki-theme="basalt"] {
+    &,
+    body {
+        background: #0c0b0a url(images/basalt-gold.webp) repeat;
+    }
+
+    /* header, on the stone */
+    #dokuwiki__header .logo a,
+    #dokuwiki__header .logo span {
+        color: #e2c06a;
+    }
+    #dokuwiki__header .logo span {
+        font-family: @serif;
+        font-variant: small-caps;
+        letter-spacing: .04em;
+    }
+    #dokuwiki__header a,
+    #dokuwiki__header .breadcrumbs a:link,
+    #dokuwiki__header .breadcrumbs a:visited {
+        color: #d9b867;
+    }
+    #dokuwiki__header .breadcrumbs {
+        color: #a8987a;
+    }
+    .dokuwiki div.breadcrumbs,
+    .dokuwiki div.breadcrumbs div {
+        border-color: rgba(201, 162, 74, .38);
+    }
+    #dokuwiki__header form.search input {
+        background: rgba(0, 0, 0, .45);
+        color: #efe3c4;
+        border-color: rgba(201, 162, 74, .55);
+    }
+    #dokuwiki__footer,
+    #dokuwiki__footer a:link,
+    #dokuwiki__footer a:visited {
+        color: #9c8c6c;
+    }
+    #dokuwiki__pagetools div.tools ul li a svg {
+        fill: #b59a5e;
+    }
+
+    /* the panel around sidebar and page: a gold sawtooth band top and bottom, in a double gold frame */
+    #dokuwiki__content {
+        background:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Crect width='16' height='12' fill='%2315120e'/%3E%3Cpath d='M0 10 L8 2 L16 10Z' fill='%23c9a24a'/%3E%3Crect y='10.5' width='16' height='1.5' fill='%23c9a24a'/%3E%3C/svg%3E") repeat-x left top,
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Crect width='16' height='12' fill='%2315120e'/%3E%3Cpath d='M0 2 L8 10 L16 2Z' fill='%23c9a24a'/%3E%3Crect y='0' width='16' height='1.5' fill='%23c9a24a'/%3E%3C/svg%3E") repeat-x left bottom,
+            rgba(250, 244, 228, .97);
+        padding: 12px 0;
+        box-shadow: 0 0 0 1px #c9a24a, 0 0 0 5px #15120e, 0 0 0 6px rgba(201, 162, 74, .6), 0 14px 40px rgba(0, 0, 0, .6);
+    }
+    #dokuwiki__aside {
+        margin-top: 14px; /* the sidebar sits beside the panel, not in it: keep it below the gold band */
+    }
+    .dokuwiki div.page {
+        background: #fffaf0;
+        color: #2a2016;
+        border: 1px solid #c9a24a;
+        box-shadow: 0 0 0 3px #fffaf0, 0 0 0 4px rgba(201, 162, 74, .55);
+    }
+    .dokuwiki .pageId span,
+    #dw__toc {
+        background: #fffaf0;
+        color: #8a7444;
+        border-color: #c9a24a;
+        box-shadow: none;
+    }
+    .dokuwiki .docInfo {
+        color: #8a7444;
+    }
+
+    .dokuwiki div.page h1,
+    .dokuwiki div.page h2,
+    .dokuwiki div.page h3,
+    .dokuwiki div.page h4,
+    .dokuwiki div.page h5 {
+        font-family: @serif;
+        font-variant: small-caps;
+        letter-spacing: .03em;
+        color: #2a2016;
+    }
+    .dokuwiki div.page h1 {
+        border-bottom: 2px solid;
+        border-image: linear-gradient(90deg, #c9a24a, rgba(201, 162, 74, 0)) 1;
+        padding-bottom: .1em;
+    }
+    .dokuwiki a:link,
+    .dokuwiki a:visited {
+        color: #2b4c8c;
+    }
+    .dokuwiki a.wikilink1,
+    .dokuwiki a.wikilink1:visited,
+    .dokuwiki .aside a:link,
+    .dokuwiki .aside a:visited {
+        color: #8b5a10;
+    }
+
+    /* sidebar: small-caps group titles and ankh bullets */
+    #dokuwiki__aside .content p {
+        font-family: @serif;
+        font-variant: small-caps;
+        font-size: 110%;
+        color: #8b5a10;
+        border-bottom: 1px solid rgba(201, 162, 74, .38);
+        margin-bottom: .4em;
+    }
+    #dokuwiki__aside ul li {
+        list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='13' viewBox='0 0 10 16'%3E%3Cellipse cx='5' cy='3.9' rx='2.2' ry='3' fill='none' stroke='%23b8892e' stroke-width='1.6'/%3E%3Cpath d='M.8 7.4h8.4v1.7H.8zM4.15 7.4h1.7V16h-1.7z' fill='%23b8892e'/%3E%3C/svg%3E");
+    }
+    blockquote {
+        border-left-color: #d4b46a;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0), #c9a24a 15%, #c9a24a 85%, rgba(0, 0, 0, 0));
+    }
+
+    .plugin_themeswitcher_menu {
+        background: #15120e;
+        color: #efe3c4;
+        border-color: rgba(201, 162, 74, .6);
+    }
+    .plugin_themeswitcher_menu button:hover,
+    .plugin_themeswitcher_menu button:focus {
+        background: rgba(201, 162, 74, .18);
+    }
+}
+
+/* ================================================================ Limestone: pale stone, engraved glyphs */
+html[data-wiki-theme="limestone"] {
+    &,
+    body {
+        background: #e2d9c6 url(images/limestone.webp) repeat;
+    }
+
+    #dokuwiki__header .logo a,
+    #dokuwiki__header .logo span {
+        color: #4e3b26;
+    }
+    #dokuwiki__header .logo span {
+        font-family: @serif;
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, .75), 0 -1px 0 rgba(60, 40, 20, .35);
+    }
+    #dokuwiki__header a,
+    #dokuwiki__header .breadcrumbs a:link,
+    #dokuwiki__header .breadcrumbs a:visited {
+        color: #2f6f8a;
+    }
+    #dokuwiki__header .breadcrumbs {
+        color: #6a5638;
+    }
+    .dokuwiki div.breadcrumbs,
+    .dokuwiki div.breadcrumbs div {
+        border-color: rgba(110, 90, 60, .3);
+    }
+    #dokuwiki__header form.search input {
+        background: rgba(252, 249, 242, .85);
+        color: #3e3020;
+        border-color: rgba(110, 90, 60, .4);
+    }
+    #dokuwiki__footer,
+    #dokuwiki__footer a:link,
+    #dokuwiki__footer a:visited {
+        color: #5a4a34;
+    }
+    #dokuwiki__pagetools div.tools ul li a svg {
+        fill: #7d6c50;
+    }
+
+    #dokuwiki__content {
+        background: rgba(246, 242, 233, .94);
+    }
+    .dokuwiki div.page {
+        background: #fbf9f4;
+        color: #33291e;
+        border: 1px solid #d8cfbd;
+        box-shadow: inset 0 1px 0 #fff, 0 2px 10px rgba(70, 55, 30, .18);
+    }
+    .dokuwiki .pageId span,
+    #dw__toc {
+        background: #fbf9f4;
+        color: #8c7b5e;
+        border-color: #d8cfbd;
+        box-shadow: none;
+    }
+    .dokuwiki .docInfo {
+        color: #8c7b5e;
+    }
+
+    .dokuwiki div.page h1,
+    .dokuwiki div.page h2,
+    .dokuwiki div.page h3,
+    .dokuwiki div.page h4,
+    .dokuwiki div.page h5 {
+        font-family: @serif;
+        letter-spacing: .03em;
+        color: #4e3b26;
+    }
+    .dokuwiki div.page h1 {
+        border-bottom: 3px double #c4b291;
+        padding-bottom: .12em;
+    }
+    .dokuwiki a:link,
+    .dokuwiki a:visited,
+    .dokuwiki a.wikilink1,
+    .dokuwiki a.wikilink1:visited,
+    .dokuwiki .aside a:link,
+    .dokuwiki .aside a:visited {
+        color: #2f6f8a;
+    }
+
+    #dokuwiki__aside .content p {
+        font-family: @serif;
+        font-variant: small-caps;
+        font-size: 110%;
+        color: #a4492f;
+        border-bottom: 1px solid rgba(110, 90, 60, .3);
+        margin-bottom: .4em;
+    }
+    #dokuwiki__aside ul li {
+        list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='13' viewBox='0 0 10 16'%3E%3Cellipse cx='5' cy='3.9' rx='2.2' ry='3' fill='none' stroke='%23a4492f' stroke-width='1.6'/%3E%3Cpath d='M.8 7.4h8.4v1.7H.8zM4.15 7.4h1.7V16h-1.7z' fill='%23a4492f'/%3E%3C/svg%3E");
+    }
+    blockquote {
+        border-left-color: #c4b291;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0), #c4b291 15%, #c4b291 85%, rgba(0, 0, 0, 0));
+    }
+}
